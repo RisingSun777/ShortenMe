@@ -74,16 +74,6 @@ namespace ShortenMe.API.IntegrationTesting
         }
 
         [TestMethod]
-        [ExpectedException(typeof(DataAccessValidationException))]
-        public void PostMethod_with_input_not_exist_in_database_whose_FullName_is_invalid_should_throw_DataAccessValidationException()
-        {
-            string linkName = "yahoo";
-
-            System.Web.Http.Results.OkNegotiatedContentResult<string> postResult =
-                (System.Web.Http.Results.OkNegotiatedContentResult<string>)controller.Post(new Models.LinkInfoPostModel { FullLink = linkName });
-        }
-
-        [TestMethod]
         public void GetMethod_with_input_not_exist_should_return_NotFound_result()
         {
             string notFoundShortenedLink = "someRandomText";
@@ -91,7 +81,7 @@ namespace ShortenMe.API.IntegrationTesting
             LinkInfo linkInfo = linkInfoDA.GetUniqueByShortenedLink(notFoundShortenedLink);
 
             Assert.IsNull(linkInfo);
-
+            
             IHttpActionResult ret = controller.Get(notFoundShortenedLink);
 
             Assert.IsInstanceOfType(ret, typeof(NotFoundResult));

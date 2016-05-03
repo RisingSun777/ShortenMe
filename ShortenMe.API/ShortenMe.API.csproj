@@ -115,10 +115,12 @@
   <ItemGroup>
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AnalyticsController.cs" />
     <Compile Include="Controllers\LinkInfoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\LinkAnalyticsModel.cs" />
     <Compile Include="Models\LinkInfoPostModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

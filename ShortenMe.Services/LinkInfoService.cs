@@ -20,7 +20,7 @@ namespace ShortenMe.Services
             this.dateTimeProvider = dateTimeProvider;
         }
 
-        public string GetFullLink(string shortenedLink)
+        public string GetFullLink(string shortenedLink, string userAgent)
         {
             LinkInfo link = linkInfoDA.GetUniqueByShortenedLink(shortenedLink);
 
@@ -30,7 +30,8 @@ namespace ShortenMe.Services
                 {
                     ID = Guid.NewGuid(),
                     LinkInfoID = link.ID,
-                    DateCreated = dateTimeProvider.Now()
+                    DateCreated = dateTimeProvider.Now(),
+                    UserAgent = userAgent
                 };
 
                 dateAccessDA.Insert(dateAccess);
@@ -65,6 +66,34 @@ namespace ShortenMe.Services
         private string GetShortenedLink(string url)
         {
             return Guid.NewGuid().ToString("N").Substring(0, 6);
+        }
+
+        private Tuple<DateTime, int>[] GetHitsInLast7Days(string shortenedLink)
+        {
+            DateAccess[] recordsInLast7Days = dateAccessDA.GetWithinTimestamp(shortenedLink, dateTimeProvider.Now().AddDays(-7));
+            var groupedByDateRecords = recordsInLast7Days.GroupBy(a => a.DateCreated.Date);
+
+            int length = groupedByDateRecords.Count();
+            Tuple<DateTime, int>[] ret = new Tuple<DateTime, int>[length];
+
+            for (int i = 0; i < length; ++i)
+            {
+                ret[i] = new Tuple<DateTime, int>(
+                    groupedByDateRecords.ElementAt(i).Key, 
+                    groupedByDateRecords.ElementAt(i).Count());
+            }
+
+            return ret;
+        }
+
+        public LinkAnalyticsModel GetAnalyticsModel(string shortenedLink)
+        {
+            LinkAnalyticsModel model = new LinkAnalyticsModel();
+
+            model.TotalHits = dateAccessDA.GetTotalHits(shortenedLink);
+            model.TotalHitsInLast7Days = GetHitsInLast7Days(shortenedLink);
+            
+            return model;
         }
     }
 }

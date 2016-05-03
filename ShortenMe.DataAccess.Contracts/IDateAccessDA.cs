@@ -9,5 +9,8 @@ namespace ShortenMe.DataAccess.Contracts
         void Delete(DateAccess input);
         DateAccess GetByID(Guid id);
         DateAccess[] GetByLinkInfoID(Guid linkInfoID);
+
+        int GetTotalHits(string shortenedLink);
+        DateAccess[] GetWithinTimestamp(string shortenedLink, DateTime timestamp);
     }
 }

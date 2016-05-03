@@ -1,0 +1,37 @@
+@import "../constants";
+
+$analytics-container-margin-top: 70px;
+$message-text-font-size: 60px;
+$analytics-result-margin-top: 30px;
+$analytics-result-font-size: 25px;
+
+$total-hits-number-font-size: 40px;
+$text-metadata-font-size: 30px;
+
+.analytics__container {
+    width: 100%;
+    text-align: center;
+    margin-top: $analytics-container-margin-top;
+    
+    .message-text {
+        color: $touched-important-color;
+        font-size: $message-text-font-size;
+    }
+
+    .analytics-result__container {
+        margin-top: $analytics-result-margin-top;
+        font-size: $analytics-result-font-size;
+
+        .analytics-criteria__container {
+            margin-top: $analytics-result-margin-top;
+        }
+
+        .text-metadata {
+            font-size: $text-metadata-font-size;
+        }
+
+        .number {
+            font-size: $total-hits-number-font-size;
+        }
+    }
+}

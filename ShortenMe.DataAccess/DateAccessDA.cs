@@ -74,6 +74,50 @@ namespace ShortenMe.DataAccess
             return ret;
         }
 
+        public DateAccess[] GetWithinTimestamp(string shortenedLink, DateTime timestamp)
+        {
+            IList<DateAccessDAO> dao = null;
+
+            using (var session = OpenSession())
+            {
+                Guid linkInfoID = session.QueryOver<LinkInfoDAO>()
+                    .Where(a => a.ShortenedLink == shortenedLink)
+                    .Select(a => a.ID)
+                    .SingleOrDefault<Guid>();
+
+                dao = session.QueryOver<DateAccessDAO>()
+                    .Where(a => a.LinkInfoID == linkInfoID && a.DateCreated >= timestamp)
+                    .List();
+            };
+
+            return dao.Select(a => new DateAccess
+            {
+                ID = a.ID,
+                DateCreated = a.DateCreated,
+                LinkInfoID = a.LinkInfoID,
+                UserAgent = a.UserAgent
+            }).ToArray();
+        }
+
+        public int GetTotalHits(string shortenedLink)
+        {
+            int ret = 0;
+
+            using (var session = OpenSession())
+            {
+                Guid linkInfoID = session.QueryOver<LinkInfoDAO>()
+                    .Where(a => a.ShortenedLink == shortenedLink)
+                    .Select(a => a.ID)
+                    .SingleOrDefault<Guid>();
+
+                ret = session.QueryOver<DateAccessDAO>()
+                    .Where(a => a.LinkInfoID == linkInfoID)
+                    .RowCount();
+            };
+
+            return ret;
+        }
+
         public void Insert(DateAccess input)
         {
             DateAccessDAO dao = new DateAccessDAO()

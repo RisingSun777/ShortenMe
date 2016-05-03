@@ -1,0 +1,17 @@
+<div class="analytics__container">
+    <div class="message-text">{{ message }}</div>
+    <div class="analytics-result__container" ng-if="analyticsModel != null">
+        <div class="analytics-criteria__container">
+            <div class="text-metadata">Total hits: <span class="number">{{ analyticsModel.totalHits }}</span></div>
+        </div>
+        
+        <div class="analytics-criteria__container">
+            <div class="total-hits-last-7-days__container">
+                <div class="text-metadata">Total hits last 7 days</div>
+                <div ng-repeat="val in analyticsModel.totalHitsInLast7Days">
+                    {{ val.m_Item1 | date:'MM/dd/yyyy' }} - <span class="number">{{ val.m_Item2 }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

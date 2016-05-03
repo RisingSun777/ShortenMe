@@ -78,5 +78,36 @@ namespace ShortenMe.DataAccess.UnitTesting
                 dateAccessDA.Delete(ret[1]);
             }
         }
+
+        [TestMethod]
+        public void GetTotalHitsTest_success()
+        {
+            Guid linkInfoID = new Guid("0B757FCD-71CB-4295-AE28-7228820067B1");
+            Guid dateAccessID1 = Guid.NewGuid();
+            Guid dateAccessID2 = Guid.NewGuid();
+
+            DateAccess[] expected = new DateAccess[]
+            {
+                new DateAccess { ID = dateAccessID1, LinkInfoID = linkInfoID, DateCreated = new DateTime(2016, 01, 01) },
+                new DateAccess { ID = dateAccessID2, LinkInfoID = linkInfoID, DateCreated = new DateTime(2016, 01, 02) }
+            };
+
+            int ret = 0;
+
+            dateAccessDA.Insert(expected[0]);
+            dateAccessDA.Insert(expected[1]);
+
+            try
+            {
+                ret = dateAccessDA.GetTotalHits("abCD3");
+
+                Assert.AreEqual(2, ret);
+            }
+            finally
+            {
+                dateAccessDA.Delete(expected[0]);
+                dateAccessDA.Delete(expected[1]);
+            }
+        }
     }
 }

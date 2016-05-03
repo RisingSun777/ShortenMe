@@ -10,6 +10,7 @@ namespace ShortenMe.Services.Contracts
     public interface ILinkInfoService
     {
         string ProcessAndShortenLink(ProcessAndShortenLinkModel model);
-        string GetFullLink(string shortenedLink);
+        string GetFullLink(string shortenedLink, string userAgent);
+        LinkAnalyticsModel GetAnalyticsModel(string shortenedLink);
     }
 }

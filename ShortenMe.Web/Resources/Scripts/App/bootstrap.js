@@ -1,7 +1,10 @@
-(function() {
+(function () {
+    var hostName = "http://localhost:3531/";
+
 	window.Constants = {
 	    AppName: "shortenMe",
-	    ApiLocation: "http://localhost:3531/api/LinkInfo/"
+	    ApiLocation: hostName + "api/LinkInfo/",
+	    AnalyticsApiLocation: hostName + "api/Analytics/",
 	};
 	var app = angular.module(window.Constants.AppName, ['ngRoute']);
 
@@ -15,7 +18,7 @@
                 templateUrl: 'Resources/Scripts/App/partials/redirectFromShortenedLink.html',
                 controller: 'redirectFromShortenedLinkController'
             })
-            .when('/analytics', {
+            .when('/analytics/:shortenedLink', {
                 templateUrl: 'Resources/Scripts/App/partials/analytics.html',
                 controller: 'linkAnalyticsController'
             })

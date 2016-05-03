@@ -1,7 +1,10 @@
-(function() {
+(function () {
+    var hostName = "http://localhost:3531/";
+
 	window.Constants = {
 	    AppName: "shortenMe",
-	    ApiLocation: "http://localhost:3531/api/LinkInfo/"
+	    ApiLocation: hostName + "api/LinkInfo/",
+	    AnalyticsApiLocation: hostName + "api/Analytics/",
 	};
 	var app = angular.module(window.Constants.AppName, ['ngRoute']);
 
@@ -15,7 +18,7 @@
                 templateUrl: 'Resources/Scripts/App/partials/redirectFromShortenedLink.html',
                 controller: 'redirectFromShortenedLinkController'
             })
-            .when('/analytics', {
+            .when('/analytics/:shortenedLink', {
                 templateUrl: 'Resources/Scripts/App/partials/analytics.html',
                 controller: 'linkAnalyticsController'
             })
@@ -25,6 +28,34 @@
 	}]);
 })();
 
+(function() {
+	var app = angular.module(window.Constants.AppName);
+	
+	app.controller("linkAnalyticsController", ["$scope", "$routeParams", "$http", function ($scope, $routeParams, $http) {
+	    var shortenedLink = $routeParams.shortenedLink;
+	    $scope.message = "Running analytics. Please wait for a moment...";
+
+	    $http({
+	        method: "GET",
+	        url: window.Constants.AnalyticsApiLocation,
+	        params: {
+	            shortenedLink: shortenedLink
+	        }
+	    })
+	    .then(function (data) {
+	        $scope.message = "Analytics result for " + shortenedLink;
+
+	        $scope.analyticsModel = {
+	            totalHits: data.data.TotalHits,
+	            totalHitsByBrowsers: data.data.TotalHitsByBrowsers,
+	            totalHitsInLast7Days: data.data.TotalHitsInLast7Days
+	        };
+	    }, function (error) {
+	        $scope.message = "Analytics failed. Please re-verify your input.";
+	        $scope.analyticsModel = null;
+	    });
+	}]);
+})();
 (function() {
 	var app = angular.module(window.Constants.AppName);
 	

@@ -11,5 +11,6 @@ namespace ShortenMe.DataAccess.Contracts.Models
         public virtual Guid ID { get; set; }
         public virtual Guid LinkInfoID { get; set; }
         public virtual DateTime DateCreated { get; set; }
+        public virtual string UserAgent { get; set; }
     }
 }

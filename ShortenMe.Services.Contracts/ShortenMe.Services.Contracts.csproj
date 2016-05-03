@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="IDateTimeProvider.cs" />
     <Compile Include="ILinkInfoService.cs" />
+    <Compile Include="Models\LinkAnalyticsModel.cs" />
     <Compile Include="Models\ProcessAndShortenLinkModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

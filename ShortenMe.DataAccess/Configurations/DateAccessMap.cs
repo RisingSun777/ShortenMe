@@ -10,6 +10,7 @@ namespace ShortenMe.DataAccess.Configurations
             Id(a => a.ID).GeneratedBy.Assigned();
             Map(a => a.LinkInfoID);
             Map(a => a.DateCreated);
+            Map(a => a.UserAgent);
             Table("DateAccess");
         }
     }
