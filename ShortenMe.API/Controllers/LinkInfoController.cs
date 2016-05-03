@@ -28,11 +28,14 @@ namespace ShortenMe.API.Controllers
         }
 
         [HttpGet]
-        public IHttpActionResult Get(string shortedLink)
+        public IHttpActionResult Get(string shortenedLink)
         {
+            string fullLink = linkInfoService.GetFullLink(shortenedLink);
 
+            if (!string.IsNullOrEmpty(fullLink))
+                return Ok(fullLink);
 
-            return Ok();
+            return NotFound();
         }
     }
 }

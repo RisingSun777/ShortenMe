@@ -53,9 +53,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseDA.cs" />
+    <Compile Include="Configurations\DateAccessMap.cs" />
     <Compile Include="Configurations\LinkInfoMap.cs" />
     <Compile Include="DataAccessModels\BaseDAO.cs" />
+    <Compile Include="DataAccessModels\DateAccessDAO.cs" />
     <Compile Include="DataAccessModels\LinkInfoDAO.cs" />
+    <Compile Include="DateAccessDA.cs" />
     <Compile Include="LinkInfoDA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

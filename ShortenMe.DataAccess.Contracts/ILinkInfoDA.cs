@@ -7,6 +7,7 @@ namespace ShortenMe.DataAccess.Contracts
     {
         LinkInfo[] GetAll();
         LinkInfo GetUniqueByFullLink(string fullLink);
+        LinkInfo GetUniqueByShortenedLink(string shortenedLink);
         void Insert(LinkInfo linkInfo);
         void Delete(LinkInfo linkInfo);
     }

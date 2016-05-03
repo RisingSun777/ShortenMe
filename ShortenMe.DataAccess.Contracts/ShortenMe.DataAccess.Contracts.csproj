@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IDateAccessDA.cs" />
     <Compile Include="ILinkInfoDA.cs" />
     <Compile Include="Models\DateAccess.cs" />
     <Compile Include="Models\LinkInfo.cs" />

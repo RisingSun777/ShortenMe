@@ -90,5 +90,28 @@ namespace ShortenMe.DataAccess
                 transaction.Commit();
             }
         }
+
+        public LinkInfo GetUniqueByShortenedLink(string shortenedLink)
+        {
+            LinkInfo ret = null;
+            LinkInfoDAO dao = null;
+
+            using (var session = OpenSession())
+            {
+                dao = session.QueryOver<LinkInfoDAO>()
+                    .Where(a => a.ShortenedLink == shortenedLink)
+                    .SingleOrDefault();
+            }
+
+            if (dao != null)
+                ret = new LinkInfo
+                {
+                    ID = dao.ID,
+                    FullLink = dao.FullLink,
+                    ShortenedLink = dao.ShortenedLink
+                };
+
+            return ret;
+        }
     }
 }

@@ -9,15 +9,35 @@ namespace ShortenMe.Services
     public class LinkInfoService : ILinkInfoService
     {
         private ILinkInfoDA linkInfoDA;
+        private IDateAccessDA dateAccessDA;
+        private IDateTimeProvider dateTimeProvider;
 
-        public LinkInfoService(ILinkInfoDA linkInfoDA)
+        public LinkInfoService(ILinkInfoDA linkInfoDA, IDateAccessDA dateAccessDA, IDateTimeProvider dateTimeProvider)
         {
             this.linkInfoDA = linkInfoDA;
+            this.dateAccessDA = dateAccessDA;
+            this.dateTimeProvider = dateTimeProvider;
         }
 
         public string GetFullLink(string shortenedLink)
         {
-            throw new NotImplementedException();
+            LinkInfo link = linkInfoDA.GetUniqueByShortenedLink(shortenedLink);
+
+            if (link != null)
+            {
+                DateAccess dateAccess = new DateAccess()
+                {
+                    ID = Guid.NewGuid(),
+                    LinkInfoID = link.ID,
+                    DateCreated = dateTimeProvider.Now()
+                };
+
+                dateAccessDA.Insert(dateAccess);
+
+                return link.FullLink;
+            }
+
+            return null;
         }
 
         public string ProcessAndShortenLink(ProcessAndShortenLinkModel model)

@@ -27,9 +27,9 @@ namespace ShortenMe.DataAccess.UnitTesting
             LinkInfo ret = linkInfoDA.GetUniqueByFullLink("some random string");
             Assert.IsNull(ret);
 
-            ret = linkInfoDA.GetUniqueByFullLink("www.google.com");
+            ret = linkInfoDA.GetUniqueByFullLink("http://www.google.com");
             Assert.AreEqual(new Guid("0B757FCD-71CB-4295-AE28-7228820067B1"), ret.ID);
-            Assert.AreEqual("www.google.com", ret.FullLink);
+            Assert.AreEqual("http://www.google.com", ret.FullLink);
             Assert.AreEqual("abCD3", ret.ShortenedLink);
         }
 
@@ -39,7 +39,7 @@ namespace ShortenMe.DataAccess.UnitTesting
             LinkInfo insertingObj = new LinkInfo
             {
                 ID = Guid.NewGuid(),
-                FullLink = "www.google.com.vn",
+                FullLink = "http://www.google.com.vn",
                 ShortenedLink = "aaAB3"
             };
 
