@@ -68,6 +68,10 @@
       <Project>{ecc29df9-24d5-4d0c-8d5d-0c37d3e1d200}</Project>
       <Name>ShortenMe.DataAccess.Contracts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ShortenMe.DataAccess\ShortenMe.DataAccess.csproj">
+      <Project>{1ed5e086-e7ac-4c03-ae71-3f8bb532bdcd}</Project>
+      <Name>ShortenMe.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ShortenMe.Services.Contracts\ShortenMe.Services.Contracts.csproj">
       <Project>{4dc3c7ec-8c3c-40cc-9e50-3d62d9d4197a}</Project>
       <Name>ShortenMe.Services.Contracts</Name>
