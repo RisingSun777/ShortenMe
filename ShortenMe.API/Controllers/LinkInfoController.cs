@@ -7,7 +7,7 @@ using System.Web.Http.Cors;
 
 namespace ShortenMe.API.Controllers
 {
-    [EnableCors("*", "*", "*")]
+    //[EnableCors("*", "*", "*")]
     public class LinkInfoController : ApiController
     {
         private ILinkInfoService linkInfoService;
@@ -18,6 +18,7 @@ namespace ShortenMe.API.Controllers
         }
 
         [HttpPost]
+        //[EnableCors("*", "*", "*")]
         public IHttpActionResult Post(LinkInfoPostModel model)
         {
             if (model != null && Uri.IsWellFormedUriString(model.FullLink, UriKind.Absolute))
@@ -31,6 +32,7 @@ namespace ShortenMe.API.Controllers
         }
 
         [HttpGet]
+        //[EnableCors("*", "*", "*")]
         public IHttpActionResult Get(string shortenedLink)
         {
             if (!string.IsNullOrEmpty(shortenedLink))

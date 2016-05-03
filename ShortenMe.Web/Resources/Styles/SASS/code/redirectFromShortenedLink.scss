@@ -1,0 +1,15 @@
+@import "../constants";
+
+$redirect-container-margin-top: 100px;
+$warning-text-font-size: 50px;
+
+.redirect__container {
+    width: 100%;
+    text-align: center;
+    margin-top: $redirect-container-margin-top;
+
+    .warning {
+        color: $touched-important-color;
+        font-size: $warning-text-font-size;
+    }
+}

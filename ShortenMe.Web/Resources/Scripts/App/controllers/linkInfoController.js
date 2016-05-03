@@ -1,7 +1,7 @@
 (function() {
 	var app = angular.module(window.Constants.AppName);
 	
-	app.controller("linkInfoController", function($scope, $http) {
+	app.controller("linkInfoController", ["$scope", "$http", function($scope, $http) {
 	    $scope.fullLinkInfo = "";
 
 	    $scope.submitForm = function () {
@@ -23,5 +23,5 @@
                 $scope.shortenedLink = "";
             });
 	    };
-	});
+	}]);
 })();
