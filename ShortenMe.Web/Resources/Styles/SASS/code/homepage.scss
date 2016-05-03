@@ -1,0 +1,95 @@
+@import "../constants";
+
+$app-title-container-height: 50px;
+$app-title-text-color: white;
+
+$app-title-empathized-font-size: $app-title-container-height * 2 / 3;
+$app-title-font-size: $app-title-empathized-font-size * 2 / 3;
+$app-title-margin-left: 10px;
+$app-logo-trailing-text-margin-left: 10px;
+
+$interface-margin-top: 60px;
+$interface-intro-text-font-size: 60px;
+$interface-submission-width: 50%;
+$interface-textbox-width: 50%;
+$interface-textbox-height: $interface-intro-text-font-size / 2;
+$interface-textbox-margin-top: 40px;
+$interface-submit-width: 10%;
+$interface-submit-height: $interface-textbox-height;
+$interface-intro-text-margin-top: 20px;
+$interface-illustration-image-width: 330px;
+
+$submission-button-container-margin-top: 30px;
+
+$shorten-link-container-margin-top: 30px;
+$shorten-link-error-message-text-color: red;
+
+.app-title__container {
+    text-align: left;
+    height: $app-title-container-height;
+    width: 100%;
+    color: $app-title-text-color;
+    background-color: $untouched-color;
+
+    .app-title__text {
+        .app-logo--empathized {
+            font-size: $app-title-empathized-font-size;
+        }
+
+        .app-logo__trailing-text {
+            font-size: $app-title-empathized-font-size * 3 / 4;
+            margin-left: $app-logo-trailing-text-margin-left;
+        }
+
+        line-height: $app-title-container-height;
+        font-size: $app-title-font-size;
+        color: $touched-color;
+        margin-left: $app-title-margin-left;
+    }
+}
+
+.homepage__container {
+    .interface__container {
+        text-align: center;
+        width: 100%;
+        margin-top: $interface-margin-top;
+
+        .interface__illustration-image {
+            width: $interface-illustration-image-width;
+        }
+
+        .interface__intro-text {
+            font-size: $interface-intro-text-font-size;
+            color: $touched-important-color;
+            margin-top: $interface-intro-text-margin-top;
+        }
+
+        .submission__container {
+            width: $interface-submission-width;
+            text-align: center;
+            display: inline-block;
+
+            .submission__button-container {
+                margin-top: $submission-button-container-margin-top;
+            }
+
+            input[type="text"] {
+                width: $interface-textbox-width;
+                height: $interface-textbox-height;
+                margin-top: $interface-textbox-margin-top;
+
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        .shorten-link__container {
+            margin-top: $shorten-link-container-margin-top;
+
+            .shorten-link__error-message {
+                color: $shorten-link-error-message-text-color;
+            }
+        }
+    }
+}

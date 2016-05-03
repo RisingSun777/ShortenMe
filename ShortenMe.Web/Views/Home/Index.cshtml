@@ -1,18 +1,21 @@
-﻿
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <title>Shorten Me!</title>
+    <script src="~/Resources/node_modules/angular/angular.js"></script>
+    <script src="~/Resources/node_modules/angular-route/angular-route.js"></script>
+    <script src="~/Resources/Scripts/shortenMe.js"></script>
+    <link href="~/Resources/Styles/shortenMe.css" rel="stylesheet" />
 </head>
-<body>
-    <div> 
-        <h1>Hello world!</h1>
+<body ng-app="shortenMe">
+    <div class="app-title__container">
+        <a class="app-title__text" href="">
+            <b class="app-logo--empathized">S&amp;M -</b><span class="app-logo__trailing-text">Shorten Me!</span>
+        </a>
     </div>
+<ng-view></ng-view>
+
 </body>
 </html>

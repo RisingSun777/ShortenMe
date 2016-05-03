@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using ShortenMe.API.Models;
 using ShortenMe.Services.Contracts;
 using ShortenMe.Services.Contracts.Models;
+using System.Web.Http.Cors;
 
 namespace ShortenMe.API.Controllers
 {
+    [EnableCors("*", "*", "*")]
     public class LinkInfoController : ApiController
     {
         private ILinkInfoService linkInfoService;
@@ -22,18 +20,26 @@ namespace ShortenMe.API.Controllers
         [HttpPost]
         public IHttpActionResult Post(LinkInfoPostModel model)
         {
-            string shortenedLink = linkInfoService.ProcessAndShortenLink(new ProcessAndShortenLinkModel { FullLink = model.FullLink });
-            
-            return Ok(shortenedLink);
+            if (model != null && Uri.IsWellFormedUriString(model.FullLink, UriKind.Absolute))
+            {
+                string shortenedLink = linkInfoService.ProcessAndShortenLink(new ProcessAndShortenLinkModel { FullLink = model.FullLink });
+
+                return Ok(shortenedLink);
+            }
+
+            return BadRequest("Model is invalid.");
         }
 
         [HttpGet]
         public IHttpActionResult Get(string shortenedLink)
         {
-            string fullLink = linkInfoService.GetFullLink(shortenedLink);
+            if (!string.IsNullOrEmpty(shortenedLink))
+            {
+                string fullLink = linkInfoService.GetFullLink(shortenedLink);
 
-            if (!string.IsNullOrEmpty(fullLink))
-                return Ok(fullLink);
+                if (!string.IsNullOrEmpty(fullLink))
+                    return Ok(fullLink);
+            }
 
             return NotFound();
         }

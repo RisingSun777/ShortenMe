@@ -1,0 +1,45 @@
+@import "constants";
+
+$common-font-family: Trebuchet MS;
+
+$button-common-horizontal-padding: 20px;
+$button-common-border-radius: 5px;
+$button-common-height: 40px;
+$button-common-text-color: white;
+
+$input-text-border-radius: 5px;
+$input-text-border-width: 1px;
+$input-text-border-color: grey;
+$input-text-border-horizontal-padding: 10px;
+
+body {
+    font-family: $common-font-family;
+}
+
+a {
+    text-decoration: none;
+}
+
+.button {
+    height: $button-common-height;
+    display: inline-block;
+    line-height: $button-common-height;
+    border-radius: $button-common-border-radius;
+    text-decoration: none;
+    color: $button-common-text-color;
+    padding: 0px $button-common-horizontal-padding;
+}
+
+.button--regular {
+    background-color: $touched-important-color;
+}
+
+.button--important {
+    background-color: $touched-color;
+}
+
+input[type=text] {
+    border-radius: $input-text-border-radius;
+    border: $input-text-border-width solid $input-text-border-color;
+    padding: 0px $input-text-border-horizontal-padding;
+}

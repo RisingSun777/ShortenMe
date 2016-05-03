@@ -1,0 +1,118 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+
+body {
+  font-family: Trebuchet MS; }
+
+a {
+  text-decoration: none; }
+
+.button {
+  height: 40px;
+  display: inline-block;
+  line-height: 40px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  padding: 0px 20px; }
+
+.button--regular {
+  background-color: #ff8598; }
+
+.button--important {
+  background-color: #5b6616; }
+
+input[type=text] {
+  border-radius: 5px;
+  border: 1px solid grey;
+  padding: 0px 10px; }
+
+.app-title__container {
+  text-align: left;
+  height: 50px;
+  width: 100%;
+  color: white;
+  background-color: #c9d787; }
+  .app-title__container .app-title__text {
+    line-height: 50px;
+    font-size: 22.22222px;
+    color: #5b6616;
+    margin-left: 10px; }
+    .app-title__container .app-title__text .app-logo--empathized {
+      font-size: 33.33333px; }
+    .app-title__container .app-title__text .app-logo__trailing-text {
+      font-size: 25px;
+      margin-left: 10px; }
+
+.homepage__container .interface__container {
+  text-align: center;
+  width: 100%;
+  margin-top: 60px; }
+  .homepage__container .interface__container .interface__illustration-image {
+    width: 330px; }
+  .homepage__container .interface__container .interface__intro-text {
+    font-size: 60px;
+    color: #ff8598;
+    margin-top: 20px; }
+  .homepage__container .interface__container .submission__container {
+    width: 50%;
+    text-align: center;
+    display: inline-block; }
+    .homepage__container .interface__container .submission__container .submission__button-container {
+      margin-top: 30px; }
+    .homepage__container .interface__container .submission__container input[type="text"] {
+      width: 50%;
+      height: 30px;
+      margin-top: 40px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto; }
+  .homepage__container .interface__container .shorten-link__container {
+    margin-top: 30px; }
+    .homepage__container .interface__container .shorten-link__container .shorten-link__error-message {
+      color: red; }

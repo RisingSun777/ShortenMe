@@ -1,0 +1,19 @@
+<div class="homepage__container">
+    <div class="interface__container">
+        <img class="interface__illustration-image" src="/Resources/Images/rope.jpg" />
+        <div class="interface__intro-text">A simple, yet delicate URL shortener</div>
+        <form class="submission__container" method="post">
+            <input type="text" placeholder="Place link here. Ex: http://www.google.com" ng-model="fullLinkInfo" />
+
+            <div class="submission__button-container">
+                <a href="" class="button button--regular" ng-click="submitForm()">Go</a>
+                <a href="/#/analytics/" class="button button--important">Analytics tools</a>
+            </div>
+        </form>
+
+        <div class="shorten-link__container">
+            <div class="shorten-link__text-info">{{ shortenedLink }}</div>
+            <div class="shorten-link__error-message">{{ errorMessage }}</div>
+        </div>
+    </div>
+</div>

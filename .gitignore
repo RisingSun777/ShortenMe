@@ -210,3 +210,5 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
+/ShortenMe.Web/Scripts/shortenMe.min.js
+/ShortenMe.Web/Scripts/shortenMe.js

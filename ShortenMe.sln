@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortenMe.Web", "ShortenMe.Web\ShortenMe.Web.csproj", "{9F26F700-4D79-48C7-B2C5-C0F8E493D500}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortenMe.DataAccess.Contracts", "ShortenMe.DataAccess.Contracts\ShortenMe.DataAccess.Contracts.csproj", "{ECC29DF9-24D5-4D0C-8D5D-0C37D3E1D200}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortenMe.DataAccess.UnitTesting", "ShortenMe.DataAccess.UnitTesting\ShortenMe.DataAccess.UnitTesting.csproj", "{C90A2D38-4616-44E2-847A-12BBC86395FC}"
@@ -27,16 +25,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ShortenMe.DataAccess", "Sho
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortenMe.DataAccess", "ShortenMe.DataAccess\ShortenMe.DataAccess.csproj", "{1ED5E086-E7AC-4C03-AE71-3F8BB532BDCD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ShortenMe.Web.Folder", "ShortenMe.Web.Folder", "{3BAA4988-C82B-490F-84E1-97F12F5A65EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortenMe.Web", "ShortenMe.Web\ShortenMe.Web.csproj", "{9F26F700-4D79-48C7-B2C5-C0F8E493D500}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9F26F700-4D79-48C7-B2C5-C0F8E493D500}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9F26F700-4D79-48C7-B2C5-C0F8E493D500}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9F26F700-4D79-48C7-B2C5-C0F8E493D500}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9F26F700-4D79-48C7-B2C5-C0F8E493D500}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ECC29DF9-24D5-4D0C-8D5D-0C37D3E1D200}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ECC29DF9-24D5-4D0C-8D5D-0C37D3E1D200}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECC29DF9-24D5-4D0C-8D5D-0C37D3E1D200}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -69,6 +67,10 @@ Global
 		{1ED5E086-E7AC-4C03-AE71-3F8BB532BDCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1ED5E086-E7AC-4C03-AE71-3F8BB532BDCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1ED5E086-E7AC-4C03-AE71-3F8BB532BDCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F26F700-4D79-48C7-B2C5-C0F8E493D500}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F26F700-4D79-48C7-B2C5-C0F8E493D500}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F26F700-4D79-48C7-B2C5-C0F8E493D500}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F26F700-4D79-48C7-B2C5-C0F8E493D500}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,5 +84,6 @@ Global
 		{5802BFD5-BD9E-464B-9719-F088C37A9515} = {2CD85A6B-948C-4626-A945-59165870AAEE}
 		{BF0D947D-7435-42C4-B495-5E11F86CB996} = {2CD85A6B-948C-4626-A945-59165870AAEE}
 		{1ED5E086-E7AC-4C03-AE71-3F8BB532BDCD} = {FE5A7421-3275-4058-A0EB-24951F9A67BC}
+		{9F26F700-4D79-48C7-B2C5-C0F8E493D500} = {3BAA4988-C82B-490F-84E1-97F12F5A65EF}
 	EndGlobalSection
 EndGlobal

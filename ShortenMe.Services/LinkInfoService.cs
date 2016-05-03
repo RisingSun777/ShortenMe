@@ -3,6 +3,7 @@ using ShortenMe.DataAccess.Contracts.Models;
 using ShortenMe.Services.Contracts;
 using ShortenMe.Services.Contracts.Models;
 using System;
+using System.Linq;
 
 namespace ShortenMe.Services
 {
@@ -63,7 +64,7 @@ namespace ShortenMe.Services
 
         private string GetShortenedLink(string url)
         {
-            return Guid.NewGuid().ToString("N");
+            return Guid.NewGuid().ToString("N").Substring(0, 6);
         }
     }
 }
