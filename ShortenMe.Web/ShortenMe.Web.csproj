@@ -90,6 +90,25 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Resources\gulpfile.js" />
+    <Content Include="Resources\Images\rope.jpg" />
+    <Content Include="Resources\node_modules\angular-route\angular-route.js" />
+    <Content Include="Resources\node_modules\angular-route\angular-route.min.js" />
+    <Content Include="Resources\node_modules\angular-route\index.js" />
+    <Content Include="Resources\node_modules\angular\angular-csp.css" />
+    <Content Include="Resources\node_modules\angular\angular.js" />
+    <Content Include="Resources\node_modules\angular\angular.min.js" />
+    <Content Include="Resources\node_modules\angular\index.js" />
+    <Content Include="Resources\Scripts\App\bootstrap.js" />
+    <Content Include="Resources\Scripts\App\controllers\linkAnalyticsController.js" />
+    <Content Include="Resources\Scripts\App\controllers\linkInfoController.js" />
+    <Content Include="Resources\Scripts\App\controllers\redirectFromShortenedLinkController.js" />
+    <Content Include="Resources\Scripts\App\partials\analytics.html" />
+    <Content Include="Resources\Scripts\App\partials\linkInfo.html" />
+    <Content Include="Resources\Scripts\App\partials\redirectFromShortenedLink.html" />
+    <Content Include="Resources\Scripts\shortenMe.js" />
+    <Content Include="Resources\Scripts\shortenMe.min.js" />
+    <Content Include="Resources\Styles\shortenMe.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -104,6 +123,28 @@
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
+    <None Include="Properties\PublishProfiles\ShortenMe %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\ShortenMe.pubxml" />
+    <Content Include="Resources\node_modules\.bin\gulp" />
+    <Content Include="Resources\node_modules\.bin\gulp.cmd" />
+    <Content Include="Resources\node_modules\.bin\rimraf" />
+    <Content Include="Resources\node_modules\.bin\rimraf.cmd" />
+    <Content Include="Resources\node_modules\angular-route\angular-route.min.js.map" />
+    <Content Include="Resources\node_modules\angular-route\bower.json" />
+    <Content Include="Resources\node_modules\angular-route\package.json" />
+    <Content Include="Resources\node_modules\angular-route\README.md" />
+    <Content Include="Resources\node_modules\angular\angular.min.js.gzip" />
+    <Content Include="Resources\node_modules\angular\angular.min.js.map" />
+    <Content Include="Resources\node_modules\angular\bower.json" />
+    <Content Include="Resources\node_modules\angular\package.json" />
+    <Content Include="Resources\node_modules\angular\README.md" />
+    <Content Include="Resources\package.json" />
+    <Content Include="Resources\Styles\SASS\bootstrap.scss" />
+    <Content Include="Resources\Styles\SASS\code\analytics.scss" />
+    <Content Include="Resources\Styles\SASS\code\homepage.scss" />
+    <Content Include="Resources\Styles\SASS\code\redirectFromShortenedLink.scss" />
+    <Content Include="Resources\Styles\SASS\constants.scss" />
+    <Content Include="Resources\Styles\SASS\global.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
