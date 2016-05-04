@@ -7,6 +7,18 @@ $analytics-result-font-size: 25px;
 
 $total-hits-number-font-size: 40px;
 $text-metadata-font-size: 30px;
+$text-metadata-margin-bottom: 20px;
+
+$graph-row-margin-top: 10px;
+$graph-row-font-size: 20px;
+
+$graph-object-background-color: $untouched-color;
+$graph-object-padding-right: 5px;
+$graph-object-text-color: white;
+$graph-object-key-left: 550px;
+$graph-object-position-left: 240px;
+
+$graph-container-width: 500px;
 
 .analytics__container {
     width: 100%;
@@ -28,10 +40,38 @@ $text-metadata-font-size: 30px;
 
         .text-metadata {
             font-size: $text-metadata-font-size;
+            margin-bottom: $text-metadata-margin-bottom;
         }
 
         .number {
             font-size: $total-hits-number-font-size;
+        }
+
+        .graph__container {
+            width: $graph-container-width;
+        }
+
+        .graph-row {
+            margin-top: $graph-row-margin-top;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: $graph-row-font-size;
+            width: $graph-container-width;
+        }
+
+        .graph-object {
+            background-color: $graph-object-background-color;
+            text-align: right;
+            padding-right: $graph-object-padding-right;
+            color: $graph-object-text-color;
+            position: relative;
+            left: $graph-object-position-left;
+        }
+
+        .graph-object-key {
+            display: inline-block;
+            position: absolute;
+            left: $graph-object-key-left;
         }
     }
 }

@@ -9,7 +9,10 @@
             <div class="total-hits-last-7-days__container">
                 <div class="text-metadata">Total hits last 7 days</div>
                 <div ng-repeat="val in analyticsModel.totalHitsInLast7Days">
-                    {{ val.m_Item1 | date:'MM/dd/yyyy' }} - <span class="number">{{ val.m_Item2 }}</span>
+                    <div class="graph-row">
+                        <span class="graph-object-key">{{ val.m_Item1 | date:'MM/dd/yyyy' }}</span>
+                        <div class="graph-object  smaller-number" style="width: {{ (val.m_Item2 * 4 + 20) + 'px' }}">{{ val.m_Item2 }}</div>
+                    </div>
                 </div>
             </div>
         </div>

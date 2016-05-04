@@ -3,10 +3,22 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <meta charset="UTF-8" />
     <title>Shorten Me!</title>
-    <script src="~/Resources/node_modules/angular/angular.js"></script>
-    <script src="~/Resources/node_modules/angular-route/angular-route.js"></script>
-    <script src="~/Resources/Scripts/shortenMe.js"></script>
+    @if (HttpContext.Current.IsDebuggingEnabled)
+    {
+        <script src="~/Resources/node_modules/angular/angular.js"></script>
+        <script src="~/Resources/node_modules/angular-route/angular-route.js"></script>
+        <script src="~/Resources/node_modules/d3/d3.js"></script>
+        <script src="~/Resources/Scripts/shortenMe.js"></script>
+    }
+    else
+    {
+        <script src="~/Resources/node_modules/angular/angular.min.js"></script>
+        <script src="~/Resources/node_modules/angular-route/angular-route.min.js"></script>
+        <script src="~/Resources/node_modules/d3/d3.min.js"></script>
+        <script src="~/Resources/Scripts/shortenMe.min.js"></script>
+    }
     <link href="~/Resources/Styles/shortenMe.css" rel="stylesheet" />
 </head>
 <body ng-app="shortenMe">

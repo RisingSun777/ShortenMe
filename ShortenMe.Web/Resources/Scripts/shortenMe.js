@@ -1,5 +1,5 @@
 (function () {
-    var hostName = "https://microsoft-apiappb806d628f7474cc297f3b2d8c31d22d7.azurewebsites.net/";
+    var hostName = "http://localhost:3531/";
 
 	window.Constants = {
 	    AppName: "shortenMe",
@@ -56,6 +56,7 @@
 	    });
 	}]);
 })();
+
 (function() {
 	var app = angular.module(window.Constants.AppName);
 	

@@ -13,8 +13,11 @@ namespace ShortenMe.DataAccess
 
         public BaseDA()
         {
-            //string connectionString = "Data Source=.;Initial Catalog=ShortenMe;Integrated Security=True";
+            #if DEBUG
+            string connectionString = "Data Source=.;Initial Catalog=ShortenMe;Integrated Security=True";
+            #else
             string connectionString = @"Server=tcp:shortenme.database.windows.net,1433;Database=ShortenMe;User ID=systemadmin@shortenme;Password=Asdfghjkl@322;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            #endif
 
             sessionFactory = Fluently
                 .Configure()

@@ -70,17 +70,23 @@ namespace ShortenMe.Services
 
         private Tuple<DateTime, int>[] GetHitsInLast7Days(string shortenedLink)
         {
-            DateAccess[] recordsInLast7Days = dateAccessDA.GetWithinTimestamp(shortenedLink, dateTimeProvider.Now().AddDays(-7));
+            const int reportingDateRange = 7;
+            DateTime reportTime = dateTimeProvider.Now().Date.AddDays(-reportingDateRange + 1);
+
+            DateAccess[] recordsInLast7Days = dateAccessDA.GetWithinTimestamp(shortenedLink, reportTime);
             var groupedByDateRecords = recordsInLast7Days.GroupBy(a => a.DateCreated.Date);
 
-            int length = groupedByDateRecords.Count();
-            Tuple<DateTime, int>[] ret = new Tuple<DateTime, int>[length];
+            Tuple<DateTime, int>[] ret = new Tuple<DateTime, int>[reportingDateRange];
 
-            for (int i = 0; i < length; ++i)
+            for (int i = 0; i < reportingDateRange; ++i)
             {
+                DateTime time = reportTime.AddDays(i);
+                var searchedDateRecords = groupedByDateRecords.SingleOrDefault(a => a.Key == time);
+
                 ret[i] = new Tuple<DateTime, int>(
-                    groupedByDateRecords.ElementAt(i).Key, 
-                    groupedByDateRecords.ElementAt(i).Count());
+                    time,
+                    searchedDateRecords == null ? 0 : searchedDateRecords.Count()
+                );
             }
 
             return ret;
