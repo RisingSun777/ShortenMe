@@ -16,7 +16,7 @@ $graph-object-background-color: $untouched-color;
 $graph-object-padding-right: 5px;
 $graph-object-text-color: white;
 $graph-object-key-left: 550px;
-$graph-object-position-left: 240px;
+$graph-object-position-left: 300px;
 
 $graph-container-width: 500px;
 
@@ -69,7 +69,6 @@ $graph-container-width: 500px;
         }
 
         .graph-object-key {
-            display: inline-block;
             position: absolute;
             left: $graph-object-key-left;
         }

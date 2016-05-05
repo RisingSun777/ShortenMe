@@ -149,7 +149,7 @@
     <Content Include="packages.config" />
     <Content Include="Metadata\deploymentTemplates\apiappconfig.azureresource.json" />
     <Content Include="apiapp.json" />
-    <None Include="Properties\PublishProfiles\ShortenMe.API%28ResourceGroup%29.pubxml" />
+    <None Include="Properties\PublishProfiles\ShortenMe.API%28resourcegroup%29.pubxml" />
     <None Include="Properties\PublishProfiles\ShortenMe.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -103,9 +103,8 @@ input[type=text] {
       padding-right: 5px;
       color: white;
       position: relative;
-      left: 240px; }
+      left: 300px; }
     .analytics__container .analytics-result__container .graph-object-key {
-      display: inline-block;
       position: absolute;
       left: 550px; }
 
